@@ -1,5 +1,6 @@
 import {ArrowLeft} from '@assets/iconsSVG';
 import {CodeIDText} from '@components/molecules';
+import {useBaseNavigation} from '@hooks/useBaseNavigation';
 import {ColorCodeID} from '@theme/colorCodeID';
 import {type} from '@theme/fontCodeID';
 import React, {FC} from 'react';
@@ -10,15 +11,14 @@ interface IHeaderAppProps {
 }
 
 export const HeaderApp: FC<IHeaderAppProps> = ({headerName}) => {
-  //   const navigation = useBaseNavigation();
+  const navigation = useBaseNavigation();
   return (
     <View style={styles.container}>
       <TouchableOpacity
-      // onPress={() => {
-      //   navigation.popToTop();
-      // }}
-      // style={{backgroundColor: 'red'}}
-      >
+        onPress={() => {
+          navigation.popToTop();
+        }}
+        style={{backgroundColor: 'red'}}>
         <ArrowLeft color={ColorCodeID.text.black} />
       </TouchableOpacity>
       <View style={{flex: 1}}>
